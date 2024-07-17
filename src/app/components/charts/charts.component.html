@@ -1,0 +1,22 @@
+<div class="col-lg-12 mt-5">
+    <h2 class="m-4">Customers</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customers" (click)="selectCustomer(customer)" class="cursor-pointer">
+                <td>{{ customer.id }}</td>
+                <td>{{ customer.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="mt-3">
+    <h2 class="text-center">Charting of {{nameOfCustomer}}</h2>
+    <canvas id="transactionChart"></canvas>
+</div>

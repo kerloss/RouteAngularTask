@@ -1,0 +1,41 @@
+<section>
+    <div>
+        <input type="search" name="search" class="form-control w-25 me-auto" placeholder="Filter by customer name"
+            [(ngModel)]="searchTerm"/>
+
+        <h2 class="text-center mb-3">Customer</h2>
+        <table class="table table-striped text-center">
+            <thead class="table-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emp of customers | filter:searchTerm">
+                    <td>{{emp.id}}</td>
+                    <td>{{emp.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="text-center my-3">Transactions</h2>
+        <table class="table table-active text-center">
+            <thead class="table-light">
+                <tr>
+                    <th>ID</th>
+                    <th>CustomerID</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let trans of transactions">
+                    <td>{{ trans.id }}</td>
+                    <td>{{ trans.customer_id }}</td>
+                    <td>{{ trans.amount }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</section>
